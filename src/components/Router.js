@@ -4,6 +4,7 @@ import Products from "./Products";
 import AboutUs from "./AboutUs";
 import Error from "./Error";
 import Header from "./Header";
+import Navbar from "./Navbar";
 import ProductDetail from "./ProductDetail";
 import infoProduct from "../data/data.json";
 
@@ -22,6 +23,7 @@ class Router extends Component {
     return (
       <BrowserRouter>
         <Header />
+        <Navbar />
         <Switch>
           <Route
             exact
@@ -29,6 +31,11 @@ class Router extends Component {
             render={() => <Products products={this.state.products} />}
           />
           <Route exact path="/nosotros" component={AboutUs} />
+          <Route
+            exact
+            path="/productos"
+            render={() => <Products products={this.state.products} />}
+          />
           <Route
             exact
             path="/producto/:productId"
