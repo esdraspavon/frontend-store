@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Products from "./Products";
-import AboutUs from "./AboutUs";
-import Error from "./Error";
-import Header from "./Header";
 import Navbar from "./Navbar";
-import Contact from "./Contact";
-import ProductDetail from "./ProductDetail";
+import Header from "./Header";
 import infoProduct from "../data/data.json";
+import Products from "../pages/Products";
+import AboutUs from "../pages/AboutUs";
+import Error from "../pages/Error";
+import Contact from "../pages/Contact";
+import ProductDetail from "../pages/ProductDetail";
 
 class Router extends Component {
   state = {
