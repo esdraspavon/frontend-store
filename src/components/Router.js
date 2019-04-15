@@ -11,8 +11,7 @@ import ProductDetail from "../pages/ProductDetail";
 
 class Router extends Component {
   state = {
-    products: [],
-    query: ""
+    products: []
   };
 
   componentWillMount() {
@@ -21,27 +20,7 @@ class Router extends Component {
     });
   }
 
-  searchProduct = query => {
-    if (query.length > 3) {
-      this.setState({ query });
-    } else {
-      this.setState({ query: "" });
-    }
-  };
-
   render() {
-    let products = [...this.state.products];
-    let query = this.state.query;
-    let result;
-
-    if (query) {
-      result = products.filter(
-        product =>
-          product.name.toLowerCase().indexOf(query.toLowerCase()) !== -1
-      );
-    } else {
-      result = products;
-    }
     return (
       <BrowserRouter>
         <Header />
@@ -50,16 +29,14 @@ class Router extends Component {
           <Route
             exact
             path="/"
-            render={() => (
-              <Products products={result} searchProduct={this.searchProduct} />
-            )}
+            render={() => <Products products={this.state.products} />}
           />
           <Route exact path="/nosotros" component={AboutUs} />
           <Route exact path="/contacto" component={Contact} />
           <Route
             exact
             path="/productos"
-            render={() => <Products products={result} />}
+            render={() => <Products products={this.state.products} />}
           />
           <Route
             exact
