@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import Header from "./components/Header";
+import Router from "./components/Router";
+//import Header from "./components/Header";
 
 class App extends Component {
   render() {
     return (
       <div className="contenedor">
-        <Header />
+        <Router />
       </div>
     );
   }
