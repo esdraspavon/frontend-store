@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Products from "./Products";
 import AboutUs from "./AboutUs";
 import Error from "./Error";
+import Header from "./Header";
 import infoProduct from "../data/data.json";
 
 class Router extends Component {
@@ -19,6 +20,7 @@ class Router extends Component {
   render() {
     return (
       <BrowserRouter>
+        <Header />
         <Switch>
           <Route
             exact
