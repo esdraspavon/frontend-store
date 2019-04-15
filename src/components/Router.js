@@ -4,6 +4,7 @@ import Products from "./Products";
 import AboutUs from "./AboutUs";
 import Error from "./Error";
 import Header from "./Header";
+import ProductDetail from "./ProductDetail";
 import infoProduct from "../data/data.json";
 
 class Router extends Component {
@@ -28,6 +29,17 @@ class Router extends Component {
             render={() => <Products products={this.state.products} />}
           />
           <Route exact path="/nosotros" component={AboutUs} />
+          <Route
+            exact
+            path="/producto/:productId"
+            render={props => {
+              console.log(props);
+              let idProducto = props.match.params.productId;
+              return (
+                <ProductDetail product={this.state.products[idProducto]} />
+              );
+            }}
+          />
           <Route component={Error} />
         </Switch>
       </BrowserRouter>
