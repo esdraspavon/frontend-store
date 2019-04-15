@@ -5,6 +5,7 @@ import AboutUs from "./AboutUs";
 import Error from "./Error";
 import Header from "./Header";
 import Navbar from "./Navbar";
+import Contact from "./Contact";
 import ProductDetail from "./ProductDetail";
 import infoProduct from "../data/data.json";
 
@@ -31,6 +32,7 @@ class Router extends Component {
             render={() => <Products products={this.state.products} />}
           />
           <Route exact path="/nosotros" component={AboutUs} />
+          <Route exact path="/contacto" component={Contact} />
           <Route
             exact
             path="/productos"
